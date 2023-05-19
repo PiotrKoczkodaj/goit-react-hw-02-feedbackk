@@ -2,32 +2,13 @@ import React, { Component } from "react";
 
 export class Feedback extends Component {
 
-    static defaultProps = {
-        value: 0,
-        step: 1,
-}
-   
     state = {
-       good: 0,
-  neutral: 0,
-  bad: 0
+        good: 0,
+        neutral: 0,
+        bad: 0
     };
 
-    counterForGood = () => {
-        this.setState((state, props) => {
-            return { good: state.good + props.step }
-        })
-    };
-    counterForNeutral = () => {
-        this.setState((state, props) => {
-            return { neutral: state.neutral + props.step }
-        })
-    };
-    counterForBad = () => {
-        this.setState((state, props) => {
-            return { bad: state.bad + props.step }
-        })
-    };
+   
   
     render() {
         
