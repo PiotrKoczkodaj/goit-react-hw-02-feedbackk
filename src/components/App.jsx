@@ -14,7 +14,7 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      <Feedback value={1} />
+      <Feedback step={1} />
     </div>
   );
 };
