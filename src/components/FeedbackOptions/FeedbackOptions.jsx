@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import styles from './FeedbackOptions.module.css';
 
+
 export class FeedbackOptions extends Component {
+  
   render() {
     const { forGood, forBad, forNeutral } = this.props;
 
@@ -14,3 +16,4 @@ export class FeedbackOptions extends Component {
     );
   }
 }
+
