@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import styles from './FeedbackOptions.module.css';
 
 export class FeedbackOptions extends Component {
-    render() {
+  render() {
     const { forGood, forBad, forNeutral } = this.props;
 
     return (
-      <div>
-        <button onClick={forGood}>good</button>
-        <button onClick={forNeutral}>neutral</button>
-        <button onClick={forBad}>bad</button>
+      <div >
+        <button className={styles.buttons} onClick={forGood}>good</button>
+        <button className={styles.buttons} onClick={forNeutral}>neutral</button>
+        <button className={styles.buttons} onClick={forBad}>bad</button>
       </div>
     );
   }
