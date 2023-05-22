@@ -1,26 +1,20 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-export class Statistics extends Component{
+export class Statistics extends Component {
+  render() {
+    const { good, neutral, bad, total, positivePercentage } = this.props;
 
-    render() {
-    
-       const { good,neutral,bad,total,positivePercentage } = this.props
-        
-        return (
-
-            <div>
-                <h3>Statistics</h3>
- <ul>
-                <li>good:{good}</li>
-                <li>neutral:{neutral}</li>
-                <li>bad:{bad}</li>
-                <li>Total:{total}</li>
-                <li>percentage:{positivePercentage}</li>
-            </ul>
-
-            </div>
-           
-            
-        )
-    }
+    return (
+      <div>
+        <h3>Statistics</h3>
+        <ul>
+          <li>good:{good}</li>
+          <li>neutral:{neutral}</li>
+          <li>bad:{bad}</li>
+          <li>Total:{total}</li>
+          <li>percentage:{positivePercentage}</li>
+        </ul>
+      </div>
+    );
+  }
 }

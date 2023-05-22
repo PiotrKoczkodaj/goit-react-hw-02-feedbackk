@@ -1,45 +1,15 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-export class FeedbackOptions extends Component{
-    
-
-      counterForGood = () => {
-        this.setState((state, props) => {
-            return { good: state.good + props.step }
-        })
-    };
-   
-     counterForNeutral = () => {
-        this.setState((state, props) => {
-            return { neutral: state.neutral + props.step }
-        })
-    };
-     counterForBad = () => {
-        this.setState((state, props) => {
-          
-            return { bad: state.bad + props.step }
-        })
-    };
-
-
+export class FeedbackOptions extends Component {
     render() {
-        
-        const { options, step } = this.props;
-       
-    
+    const { forGood, forBad, forNeutral } = this.props;
 
-       
-        return (
-            
-            <div>
-                <button onClick={this.counterForGood}>good</button>
-                <button>neutral</button>
-                <button  >bad</button>
-            </div>
-                
-    
-)
-
-}
-
+    return (
+      <div>
+        <button onClick={forGood}>good</button>
+        <button onClick={forNeutral}>neutral</button>
+        <button onClick={forBad}>bad</button>
+      </div>
+    );
+  }
 }
