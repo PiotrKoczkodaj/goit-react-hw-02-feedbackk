@@ -11,28 +11,23 @@ export class App extends Component{
         good: 0,
         neutral: 0,
         bad: 0
-  };
+     };
   }
  
+   countTotalFeedback = () => {
+        return this.state.good + this.state.bad + this.state.neutral
+        };
+  
+   countPositiveFeedbackPercentage = () => {
+    const total = this.state.good + this.state.bad + this.state.neutral;
+    const percentage = this.state.good * 100 / total;
+    const number = Math.round(percentage) + "%";
+    if (number === 'NaN%') return 0
+    return number
+    }
+  
   render() {
-    
-  const counterForGood = () => {
-        this.setState((state, props) => {
-            return { good: state.good + props.step }
-        })
-    };
-  const  counterForNeutral = () => {
-        this.setState((state, props) => {
-            return { neutral: state.neutral + props.step }
-        })
-    };
-   const counterForBad = () => {
-        this.setState((state, props) => {
-          
-            return { bad: state.bad + props.step }
-        })
-    };
-
+  
 return (
     
     <div
@@ -46,8 +41,8 @@ return (
       }}
     >
       <Section title="Please leave feedback">
-        <Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={0} positivePercentage={0} />
-        <FeedbackOptions options={counterForBad} onLeaveFeedback={0}/>
+        <Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={this.countTotalFeedback()} positivePercentage={this.countPositiveFeedbackPercentage()} />
+      <FeedbackOptions options={this.state} step={1} />
       </Section>
       {/* <Feedback step={1} /> */}
       

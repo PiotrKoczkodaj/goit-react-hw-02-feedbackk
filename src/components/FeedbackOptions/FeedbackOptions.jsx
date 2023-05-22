@@ -1,15 +1,40 @@
 import React, { Component } from "react";
 
 export class FeedbackOptions extends Component{
+    
+
+      counterForGood = () => {
+        this.setState((state, props) => {
+            return { good: state.good + props.step }
+        })
+    };
+   
+     counterForNeutral = () => {
+        this.setState((state, props) => {
+            return { neutral: state.neutral + props.step }
+        })
+    };
+     counterForBad = () => {
+        this.setState((state, props) => {
+          
+            return { bad: state.bad + props.step }
+        })
+    };
+
 
     render() {
-    const {counterForBad} = this.props
+        
+        const { options, step } = this.props;
+       
+    
+
+       
         return (
             
             <div>
-                <button>good</button>
+                <button onClick={this.counterForGood}>good</button>
                 <button>neutral</button>
-                <button onClick={counterForBad}>bad</button>
+                <button  >bad</button>
             </div>
                 
     
