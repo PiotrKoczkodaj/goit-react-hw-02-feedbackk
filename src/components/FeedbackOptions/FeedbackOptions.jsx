@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './FeedbackOptions.module.css';
-
+import PropTypes from 'prop-types';
 
 export class FeedbackOptions extends Component {
   
@@ -17,3 +17,8 @@ export class FeedbackOptions extends Component {
   }
 }
 
+FeedbackOptions.propTypes = {
+  forGood: PropTypes.func.isRequired,
+  forBad: PropTypes.func.isRequired,
+  forNeutral: PropTypes.func.isRequired
+}
